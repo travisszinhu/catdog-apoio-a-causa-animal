@@ -21,17 +21,20 @@
 - Os usuários do tipo Administrador logados tem acesso ao menu administrativo, onde podem:
   - [X] Gerenciar Roles (Tipos de usuários)
   - [X] Gerenciar Usuários
+  - [X] Gerenciar Pets
+  - [X] Gerenciar Suportes
 
 - Os usuários tem acesso a parte pública da aplicação web, onde podem:
   - [X] Registrar-se como usuário comum
   - [X] Logar-se para ter acesso ao menu administrativo
+  - [X] Solicitar suporte
 
 ---
 ## 🚀 Como executar o projeto
 
 ### Pré-requisitos
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: [Git](https://git-scm.com), [Laravel](https://laravel.com/docs/8.x/installation) e [Node.js](https://nodejs.org/en/).
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas: [Git](https://git-scm.com), [Laravel](https://laravel.com/docs/8.x/installation).
 
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
@@ -63,7 +66,7 @@ $ composer install
 
 ```
 #### Configurando o projeto
-1. Faça uma cópia do arquivo `.env.example` e renomeie para `.env`:
+1. Faça uma cópia do arquivo `.env-examplo` e renomeie para `.env`:
 2. Crie um banco de dados
 > Sugestão MariaDB ou MySQL: definição de collation: **utf8mb4_general_ci**
 
@@ -76,7 +79,7 @@ $ composer install
     DB_USERNAME=USUARIO
     DB_PASSWORD=SENHA
 ```
-
+4. Caso você não tenha o banco use o arquivo [database/dump/laravel.sql](database/dump/laravel.sql) para criar um banco de exemplo.
 ### Limpar cache
 ```bash    
 # Limpar cache de configurações da aplicação:
@@ -111,19 +114,6 @@ O sistema é criado com um usuário Administrativo com as seguintes credenciais 
 login: admin@admin.com
 senha: password
 
-**Você pode criar usuários pelo terminal usando tinker:**
-```bash
-# Executar o tinker
-php artisan tinker
-
-# No tinker: 
->>> $user = new \App\Models\User;
->>> $user->email = 'email.do.usuario@email.com';
->>> $user->password = Hash::make('senha'); # altere 'senha' para uma senha forte
->>> $user->name = 'Nome do Usuário';
->>> $user->save();
->>> exit() # sair do tinker
-```
 ---
 
 ## 🛠 Tecnologias
@@ -131,9 +121,7 @@ php artisan tinker
 As seguintes ferramentas foram usadas na construção do projeto:
 
 - [Laravel](https://laravel.com/docs)
-- [Node.js](https://nodejs.org/en/)
 - [Bootstrap](https://getbootstrap.com/)
-- [JQuery](https://jquery.com/)
 - [Font Awesome](https://fontawesome.com/search?o=r&m=free)
 
 As seguintes dependências foram incluidas no projeto:
