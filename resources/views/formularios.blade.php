@@ -7,7 +7,7 @@
 
                         <div class="col-lg-10 col-12">
                             <h1>
-                                <span class="d-block text-dark">FORMULÁRIOS</span>
+                                <span class="d-block text-dark">Resultados de pesquisa </span>
                             </h1>
                         </div>
                     </div>

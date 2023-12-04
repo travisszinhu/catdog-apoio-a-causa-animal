@@ -7,8 +7,8 @@
 
                         <div class="col-lg-10 col-12 header-info">
                             <h1>
-                                <span class="d-block text-primary">Precisa de ajuda?</span>
-                                <span class="d-block text-dark">Achou algum erro?</span>
+                                <span class="d-block text-primary">Achou um Pet precisando de ajuda?</span>
+                                <span class="d-block text-dark">Cadastre para adoção</span>
                             </h1>
                         </div>
                     </div>
@@ -22,32 +22,39 @@
                     <div class="row">
 
                         <div class="col-lg-6 col-12">
-                            <h2 class="mb-4">DIGITE<span>AQUI</span></h2>
+                            <h2 class="mb-4">Cadastre o <span>pet</span></h2>
 
-                            <form class="contact-form me-lg-5 pe-lg-3" role="form" action="{{route('suporte.store')}}" method="post">
-                              @csrf
+                            <form class="contact-form me-lg-5 pe-lg-3" role="form" action="{{route('adocao.store')}}" enctype="multipart/form-data" method="POST">
+                                    @csrf
                                 <div class="form-floating">
-                                    <input type="text" name="nome" id="name" class="form-control" placeholder="Full name" required>
+                                    <input type="text" name="nome" id="nome" class="form-control" placeholder="Full nome" required>
 
-                                    <label for="name">NOME</label>
+                                    <label for="nome">NOME</label>
                                 </div>
 
                                 <div class="form-floating my-4">
-                                    <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="Email address" required>
+                                    <input type="text" name="telefone" id="telefone" class="form-control" placeholder="telefone de contato" required>
 
-                                    <label for="email">EMAIL</label>
+                                    <label for="telefone">TELEFONE DE CONTATO</label>
                                 </div>
 
                                 <div class="form-floating my-4">
-                                    <input type="subject" name="tipo_de_assunto" id="subject"class="form-control" placeholder="Subject" required>
-
-                                    <label for="subject">TIPO DE ASSUNTO</label>
+                                    <select name="raca" id="raca" class="form-control" placeholder="raca de contato" required>
+                                        <option value="0">Cachorro</option>
+                                        <option value="1">Gato</option>
+                                      </select>
+                                    <label for="raca">Raça</label>
                                 </div>
+
+                                <div class="custom-file  my-4">
+                                    <input type="file"  name="foto" id="foto" class="custom-file-input" required>
+                                    <label class="custom-file-label" for="foto">FOTO DO PET</label>
+                                  </div>
 
                                 <div class="form-floating mb-4">
-                                    <textarea id="message" name="descricao" class="form-control" placeholder="Leave a comment here" required style="height: 160px"></textarea>
+                                    <textarea id="descricao" name="descricao" class="form-control" placeholder="Leave a comment here" required style="height: 160px"></textarea>
 
-                                    <label for="message">DIGITE AQUI</label>
+                                    <label for="descricao"> DESCRIÇÃO DO PET</label>
                                 </div>
 
                                 <div class="col-lg-5 col-6">
